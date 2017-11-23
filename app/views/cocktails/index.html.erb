@@ -3,7 +3,9 @@
     <div class="col-xs-12">
         <ul class="list-group">
           <% @cocktails.each do |cocktail| %>
-             <li class="list-group-item"><%= cocktail.name %></li>
+             <li class="list-group-item">
+               <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+             </li>
           <% end %>
         </ul>
       <%= link_to "Let's cocktail!", new_cocktail_path, class:"btn btn-success" %>

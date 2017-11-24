@@ -1,4 +1,5 @@
 <%= simple_form_for cocktail do |f| %>
   <%= f.input :name, placeholder: "How's your cocktail called?"%>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.button :submit, class:"btn-primary"%>
 <% end %>

@@ -3,9 +3,10 @@
     <div class="col-sm-12">
 
       <h3>Fancy a <em><%= @cocktail.name %></em>? </h3>
-      <h4>Here is what you need</h4>
-      <%= link_to "Back",  cocktails_path%>
 
+      <% if @cocktail.photo? %>
+         <%= cl_image_tag @cocktail.photo.path, width: 300, height: 300, crop: :fill %>
+      <% end %>
       <ul class="list-group">
         <% @cocktail.doses.each do |dose| %>
           <li class="list-group-item">
@@ -21,6 +22,7 @@
         <%= f.association :ingredient %>
         <%= f.button :submit, class:"btn-primary"%>
       <% end %>
+      <%= link_to "Back",  cocktails_path%>
     </div>
   </div>
 </div>

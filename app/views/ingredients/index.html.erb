@@ -3,7 +3,11 @@
     <div class="col-xs-12">
         <ul class="list-group">
           <% @ingredients.each do |ingredient| %>
-             <li class="list-group-item"><%= ingredient.name %></li>
+             <li class="list-group-item">
+                <% if ingredient.photo? %>
+                  <%= cl_image_tag ingredient.photo.path, width: 50, height: 50, crop: :fill %>
+                <% end %>
+              <%= ingredient.name %></li>
           <% end %>
         </ul>
         <%= link_to "Back to cocktails", cocktails_path %>

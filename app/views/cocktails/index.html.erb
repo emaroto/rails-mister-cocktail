@@ -5,6 +5,7 @@
           <% @cocktails.each do |cocktail| %>
              <li class="list-group-item">
                <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+               <%= link_to "Delete", cocktail_path(cocktail.id), method: :DELETE, class:"btn btn-default btn-xs" %>
              </li>
           <% end %>
         </ul>

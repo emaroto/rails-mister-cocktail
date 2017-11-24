@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <h3>Cool, we have a new cocktail!! </h3>
-      <h4><%= @cocktail.name %></h4>
+      <h3>Fancy a <em><%= @cocktail.name %></em>? </h3>
+      <h4>Here is what you need</h4>
       <%= link_to "Back",  cocktails_path%>
 
       <ul class="list-group">
         <% @cocktail.doses.each do |dose| %>
           <li class="list-group-item">
             <%= dose.description %> de <%= dose.ingredient.name %>
-            <%= link_to "Delete", cocktail_path %>
+            <%= link_to "Delete", dose_path(dose.id), method: :DELETE, class:"btn btn-default btn-xs" %>
           </li>
         <% end %>
       </ul>
